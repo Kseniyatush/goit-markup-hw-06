@@ -665,6 +665,7 @@ ul {
 .footer-social-icon {
   height: 24px;
   width: 24px;
+  
 }
 form {
   display: block;
@@ -672,6 +673,16 @@ form {
 }
 label {
   cursor: default;
+}
+
+.modal-form {
+  position: relative;
+  font-size: 12px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: var(--primary-color);
+  margin-left: 24px;
+  margin-right: 24px;
 }
 .modal-title {
   text-align: center;
@@ -682,15 +693,6 @@ label {
   letter-spacing: 0.02em;
   color: var(--primary-color);
   margin-bottom: 16px;
-}
-.modal-form {
-  position: relative;
-  font-size: 12px;
-  line-height: 1.33;
-  letter-spacing: 0.04em;
-  color: var(--primary-color);
-  margin-left: 24px;
-  margin-right: 24px;
 }
 .name-form {
   margin-bottom: 8px;
