@@ -646,7 +646,10 @@ ul {
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
   width: 264px;
 }
-
+.email:focus {
+  outline: none;
+  border-color: #404bbf;
+}
 .footer-button {
   display: flex;
   gap: 16px;
@@ -664,10 +667,9 @@ ul {
   font-size: 16px;
   line-height: 1.5;
   transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
 .footer-button :hover,
-.footer-button :focus { 
+.footer-button :focus {
   background-color: #404bbf;
 }
 
@@ -716,11 +718,10 @@ label {
   border: 1px solid #8e8f99;
   border-radius: 4px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
-.name-input:hover,
-.name-input :focus {
-  border color: #404bbf;
+.name-input:focus {
+  outline: none;
+  border-color: #404bbf;
 }
 .icon-person {
   position: absolute;
@@ -729,15 +730,20 @@ label {
   height: 18px;
   width: 18px;
   transition: fill 250ms cubic-bezier(0.4, 0, 0.2, 1);
-
 }
-.icon-person:hover,
-.icon-person:focus {
-  color:#404bbf;
+.name-input:focus + .icon-person {
+  fill: #404bbf;
 }
 .phone-input {
   margin-bottom: 8px;
   height: 58px;
+}
+.modal-phone:focus {
+  outline: none;
+  border-color: #404bbf;
+}
+.modal-phone:focus + .icon-phone {
+  fill: #404bbf;
 }
 .phone-lable {
   position: relative;
@@ -777,6 +783,13 @@ label {
   border-radius: 4px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.modal-email:focus {
+  outline: none;
+  border-color: #404bbf;
+}
+.modal-email:focus + .icon-email {
+  fill: #404bbf;
+}
 .icon-email {
   position: absolute;
   bottom: 8px;
@@ -802,6 +815,10 @@ label {
   border-radius: 4px;
   transition: border-color 250ms cubic-bezier(0.4, 0, 0.2, 1);
 }
+.comment-text:focus {
+  outline: none;
+  border-color: #404bbf;
+}
 
 .accept {
   font-size: 12px;
@@ -816,23 +833,43 @@ label {
   align-items: center;
 }
 .checkbox-accept {
+  position: absolute;
+  top: 100%;
+  left: 8px;
   appearance: none;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
 }
 .checkbox-accept:checked + .custom-checkbox {
+  background-color: #4d5ae5;
+  border-color: #4d5ae5;
+}
+.checkbox-accept:focus + .custom-checkbox {
+  outline: 1.25px solid #000000;
+}
+.checkbox-accept:checked + .custom-checkbox .custom-icon {
   opacity: 1;
 }
-
 .custom-checkbox {
-  display: inline-block;
-  margin-right: 8px;
-  opacity: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   width: 16px;
   height: 16px;
+  margin-right: 8px;
+  color: #f4f4fd;
   border: 1.25px solid #2e2f42;
   border-radius: 2px;
-  background-image: url('../images/click.jpg');
+  cursor: pointer;
 }
-
+.custom-icon {
+  fill: #4d5ae5;
+  opacity: 0;
+}
+.check-descr-link {
+  color: #4d5ae5;
+}
 .send-button {
   display: block;
   padding: 16px 64px;
@@ -852,6 +889,5 @@ label {
 }
 .send-button :hover,
 .send-button :focus {
-  fill: var(--mains-color);
   background-color: #404bbf;
 }
